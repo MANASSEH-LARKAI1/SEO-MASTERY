@@ -1,0 +1,215 @@
+:root{
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #3498db;
+    --light-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --text-color:#333;
+    --text-light: #7f8c8d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-seriflibn;
+    line-height:1.6;color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+/* typography*/
+h1,h2,h3,h4{
+    margin-bottom:1rem;
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 2rem;
+    color: var(--primary-color)
+}
+h2{
+    font-size: 2rem;
+    color: var(--secondary-color)
+}
+
+p{
+    margin-bottom:  1rem;
+}
+
+
+/*layout*/
+
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+    padding:0 20px;
+    width:100%;
+}
+
+/* Header and Navigation */
+
+header{
+    background-color: var(--primary-color);
+    padding-top: 4rem 0;
+    position: sticky;
+    top:0;
+    z-index:100;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;    
+}
+
+nav a:hover{
+    color:var(--secondary-color)
+}
+
+/* Hero Section*/
+.hero{
+    background: linear-gradient(rgba(196, 183, 9, 0.7), rgba(0,0,0,0.7)), url("image/hero-bg-jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero1{
+    background: linear-gradient(rgba(26, 150, 78, 0.7), rgba(0, 0, 0, 0.7)), url("image/hero-bg-jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero2{
+    background: linear-gradient(rgba(84, 39, 126, 0.7), rgba(0,0,0,0.7)), url("image/hero-bg-jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero3{
+    background: linear-gradient(rgba(25, 55, 187, 0.7), rgba(0,0,0,0.7)), url("image/hero-bg-jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.d-block{
+    width: 1%;
+    height: 40%;
+}
+
+.brand{
+    width: 100px;
+    height: 100px;
+    
+}
+
+
+.cta-button{
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top:1rem;
+     transition: background-color 0.3s;
+}
+.cta-button:hover{
+    background-color: #c0392b;
+}
+
+/*features section*/
+
+.features{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 
+    minmax(300px, 1fr));
+}
+
+/* CTA section */
+
+.cta{
+    background-color: var(--light color);
+    padding: 3rem 1rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#lead-form{
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: grid;
+    gap: 1rem;
+}
+
+#lead-form input, #lead-form select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#lead-form button{
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius:5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#lead-form button:hover{
+    background-color: #2980b9
+}
+/*footer*/
+
+footer{
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding:1.5rem;
+    margin-top:2rem;
+}
+
+/* responsive design */
+@media (max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+    h2{
+        font-size:1.5rem;
+    }
+    nav u1{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
