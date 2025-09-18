@@ -7,6 +7,24 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+
+ <script>
+
+  function LoadAnalytics(){
+  var gtaScript= document.createElement("scripts")
+  gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-NWFB8ZKM85"
+  gtaScript.async-true;
+  document.head.appendChild(gtaScript);
+
+  gtaScript.onload = function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NWFB8ZKM85');
+  }
+}
+</script>
+ 
   gtag('config', 'G-NWFB8ZKM85');
 </script>
 </script>
@@ -216,6 +234,7 @@
 <body>
     
 </body>
+
 
 
 
