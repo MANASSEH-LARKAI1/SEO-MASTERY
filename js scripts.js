@@ -48,7 +48,7 @@ function acceptCookies(){
     // loadAnalytics(); GA4
 }
 
-function declineCookies(){
+function declineCookies() {
     document.getElementById("cookie-banner").style.display="none";
     localStorage.setItem("cookieAccepted", "false")
     // loadAnalytics(); GA4
