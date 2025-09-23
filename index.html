@@ -10,10 +10,10 @@
 
  <script>
 
-  function LoadAnalytics(){
-  var gtaScript= document.createElement("scripts")
+  function loadAnalytics(){
+  var gtaScript= document.createElement("script")
   gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-NWFB8ZKM85"
-  gtaScript.async-true;
+  gtaScript.async=true;
   document.head.appendChild(gtaScript);
 
   gtaScript.onload = function() {
@@ -234,6 +234,7 @@
 <body>
     
 </body>
+
 
 
 
