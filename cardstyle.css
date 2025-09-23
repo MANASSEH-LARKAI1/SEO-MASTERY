@@ -7,7 +7,7 @@
 
 body{
     background-color: white;
-    color: (#333)
+    color: (#333);
 }
 
 header{
@@ -17,7 +17,16 @@ header{
     position: sticky;
     top: 100;
     z-index: 100;
+
 }
+
+.container {
+    width: 100;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
     .nav-top{
         display: flex;
         justify-content: center;
@@ -57,9 +66,6 @@ header{
     color: red;
 }
 
-.sale-tag{
-    color: red;
-}
 .products-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -72,7 +78,7 @@ header{
     background-color: white;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgb(0.0.0.01);
+    box-shadow: 0 2px 8px rgb(0.0.0.0.1);
     transition: transform 03s ease;
 }
 
@@ -132,8 +138,58 @@ product-info{
     color: red;
     font-size: 14px;
 }
+
+ .buy-now-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition:background-color 0.3s;
+
+}
+
+ .buy-now-hover:hover {
+    background-color: #333;
+}
+
+/* purchase Form styles */
+.purchase-form {
+    display: none;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.purchase-form h2{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+   
+    
+  
+}
+.form-group input,
+.form-group textures {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+
 /* Responsive Adjustment */
-@media(max-width: 786px){
+@media(max-width:786px ){
     .nav-top, .nav-main{
         flex-wrap: wrap;
         gap: 15px;
@@ -165,6 +221,134 @@ product-info{
     padding: 10px;
  }
 }
+
+
+.submit-btn{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+}
+
+.product-summary {
+    display: flex;
+    align-items: flex;
+    gap: 15;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+
+.product-summary img {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 4px;
+
+}
+
+.thank-you{
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-bottom: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #a1e0a3;
+    
+}
+.thank-you i {
+    font-size: 50pz;
+    color: green;
+    margin-bottom: 20px;
+
+}
+
+/* .Email-instructions */
+
+.email-instructions{
+    background-color: #f0f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid #4a90e2;
+
+}
+
+.email-instructions h3{
+    color: #4a90e2;
+    margin-bottom: 10px ;
+}
+
+/* Responsive adjustment */
+@media (max-width: 786px) {
+    .nav-top, nav-main{
+        flex-wrap: wrap;
+        gap: 15px;
+    
+    }
+
+.products-container{
+    grid-template-columns: repeat(auto-fill, minmax(2000px, 1fr));
+    padding: 20px;
+    gap: 20px;
+
+}     
+}
+
+.Card-image{
+    height: 250px;
+
+}   
+/* footer */
+
+footer{
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+
+}
+
+@media(max-width: 480px) {
+    .products-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+.card-image{
+    height: 180px;
+   
+}
+   
+.product-info{
+    padding: 10px;
+
+}
+
+.purchase-form{
+    padding: 20px;
+
+  
+}
+}
+
+
+
+
 
 
 
