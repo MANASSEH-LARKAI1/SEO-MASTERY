@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manasseh's Music - inspiring sounds and creative compositions from Ghana">
+    <title>About | MANASSEH'S MUSIC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">MANASSEH'S<span>MUSIC</span></a>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" style="padding:120px 5% 80px;">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Discover the heart behind the music and the story that shapes every note.</p>
+        </div>
+
+        <div class="about-content" style="display:flex;align-items:center;gap:50px;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
+            
+            <div class="about-image" style="flex:1;min-width:300px;">
+                <img src="images/AboutImage2.jpg" alt="Manasseh Larkai - Musician" style="width:100%;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+            </div>
+            
+            <div class="about-text" style="flex:1.2;min-width:300px;">
+                <h3>My Musical Journey</h3>
+                <p>Hello, I'm <strong>Manasseh Larkai</strong> — a passionate musician, composer, and sound explorer based in Accra, Ghana. My journey began at age 8 when I first discovered the piano, and from that moment, music became more than art — it became my voice.</p>
+                <p>Over the past decade, I’ve composed music that blends ambient, gospel, and Afro-fusion styles, expressing faith, passion, and deep emotion. My compositions have been featured in performances, digital projects, and collaborations worldwide.</p>
+                <p>I believe music has the divine power to heal, inspire, and connect souls — and every melody I create is a reflection of that belief.</p>
+
+                <div class="skills">
+                    <h3>My Skills</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Music Composition</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Sound Design</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Audio Production</span><span>88%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width:88%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Live Performance</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspirational Quote Section -->
+    <section style="background-color:var(--secondary-color);padding:60px 10%;text-align:center;">
+        <blockquote style="font-size:1.3rem;font-style:italic;color:#ccc;max-width:800px;margin:0 auto;">
+            “Music is the breath of my spirit — every note is a prayer, every rhythm a heartbeat.”
+        </blockquote>
+        <p style="margin-top:15px;color:var(--highlight-color);font-weight:600;">— Manasseh Larkai</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Me</h3>
+                <p>I'm a passionate musician and composer dedicated to creating unique sound experiences that connect with listeners on an emotional level.</p>
+                <div class="social-links">
+
+                    <a href="https://web.facebook.com/profile.php?id=61579012847533" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/mas_niilarkai/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@manassehlarkai2025" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href=""><i class="fab fa-spotify"></i></a>
+                    <a href=""><i class="fab fa-apple"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li> 
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> larkaimas18@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +233 27 673 5555</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dansoman, Accra</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="year"></span>  Manasseh's Music. All rights reserved. powered by <a style="color: beige;" href="mailto:Manasseh'music">Manasseh'Music</a></p>
+        </div>
+        
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
