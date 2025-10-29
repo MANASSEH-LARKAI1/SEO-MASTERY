@@ -269,3 +269,45 @@
     
         }
         } 
+
+// Email Popup Functions
+function closeEmailPopup() {
+    document.getElementById("email-popup").style.display = "none";
+}
+
+// Close popup when X is clicked (FIXED: corrected spelling)
+document.querySelector(".close-btn").addEventListener("click", function(){
+    closeEmailPopup();
+});
+
+// Close when clicking outside content
+document.getElementById("email-popup").addEventListener("click", function(e){
+    if(e.target === this){
+        closeEmailPopup();
+    }
+});
+
+// Show popup after 5 seconds
+setTimeout(function(){
+    document.getElementById("email-popup").style.display = "flex";
+}, 5000);
+
+// Cookie Banner Functions
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+    console.log('Cookies accepted');
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+    console.log('Cookies declined');
+}
+
+// Show cookie banner if not already accepted
+document.addEventListener('DOMContentLoaded', function() {
+    if (!localStorage.getItem('cookieConsent')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+});
