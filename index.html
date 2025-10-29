@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
+<script>
+
+script>
+
+  function loadAnalytics(){
+  var gtaScript= document.createElement("script")
+  gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-K9JJKKFC0Z"
+  gtaScript.async=true;
+  document.head.appendChild(gtaScript);
+
+  gtaScript.onload = function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K9JJKKFC0Z');
+  }
+}
+
+</script>
+
+
+
+
 
             <!-- Structured Data -->
 
@@ -200,18 +223,32 @@
 
     <!--========================> SignUp Page <==============================-->
 
-    <div id="email-popup" class="popup-container" style="display:none;">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h3>Join our newsletter</h3>
-            <form id="email-form" action="https://github.us1.list-manage.com/subscribe/post?u=cc77af8ae561f34988710a3fb&amp;id=f80011f02c&amp;f_id=00e8f2e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+  <!-- Redesigned Email Popup -->
+<div id="email-popup" class="popup-container" style="display:none;">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h3>Join our newsletter</h3>
+        <form id="email-form" action="https://github.us1.list-manage.com/subscribe/post?u=cc77af8ae561f34988710a3fb&amp;id=f80011f02c&amp;f_id=00e8f2e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
             <input type="email" name="Email" placeholder="Your Email Address" required>
             <button type="Submit">Subscribe</button>
-         </form>   
+        </form>   
+    </div>
+</div>
+
+<!-- Redesigned Cookie Banner -->
+<div id="cookie-banner" style="display:none;">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <h3>We Use Cookies</h3>
+            <p>We use cookies to improve your browsing experience. By clicking "Accept", you agree to our use of cookies.</p>
         </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn decline" onclick="declineCookies()">Decline</button>
         </div>
-    
-     
+    </div>
+</div>
+
 
 
     <!-- Footer -->
@@ -275,7 +312,9 @@ setTimeout(function(){
     </script>
 
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
+     <script src="scripts.js"></script>
+    
     
 
 
