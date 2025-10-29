@@ -7,7 +7,6 @@ const tracks = [
         duration: "3:45",
         image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         audioFile:"audio/Joe-Mettle-Worship-Medley-ft-Sound-Of-Heaven.mp3"
-        //Make sure u remove music encoding
     },
     {
         id: 1,
@@ -112,7 +111,6 @@ function loadTrack(index) {
 // Play/Pause track
 function togglePlayPause() {
     if (audioElement.src === '') {
-        // If no track is loaded, load the first one
         loadTrack(0);
     }
     
@@ -221,7 +219,52 @@ function updateProgress() {
     }
 }
 
-// Event Listeners
+// ========== COOKIE AND POPUP FUNCTIONS ==========
+
+// Cookie Banner Functions
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+    console.log('Cookies accepted - saved to localStorage');
+    
+    // Load analytics after accepting cookies
+    if (typeof gtag !== 'undefined') {
+        gtag('config', 'G-4N8D4VDWQJ');
+    }
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+    console.log('Cookies declined - saved to localStorage');
+}
+
+// Check and show cookie banner if not already accepted
+function checkCookieConsent() {
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    console.log('Cookie consent status from localStorage:', cookieConsent);
+    
+    if (!cookieConsent) {
+        // No decision made yet, show the banner after a delay
+        console.log('No cookie consent found - showing banner');
+        setTimeout(() => {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }, 1000);
+    } else {
+        // User has already made a decision, hide the banner
+        console.log('Cookie consent found:', cookieConsent, '- hiding banner');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+}
+
+// Email Popup Functions
+function closeEmailPopup() {
+    document.getElementById("email-popup").style.display = "none";
+}
+
+// ========== EVENT LISTENERS AND INITIALIZATION ==========
+
+// Event Listeners for audio player
 playPauseBtn.addEventListener('click', togglePlayPause);
 prevBtn.addEventListener('click', prevTrack);
 nextBtn.addEventListener('click', nextTrack);
@@ -256,85 +299,35 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('active');
 });
 
-// Set current year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Initialize volume
-audioElement.volume = 0.8;
-
-if (isPlaying==="true") {
-     window.onload = function () {
-    document.getElementById("audioplayer").style.display = "block"
-
-}
-} 
-
-// ... (keep all your existing track and audio player code) ...
-
-// Email Popup Functions
-function closeEmailPopup() {
-    document.getElementById("email-popup").style.display = "none";
-}
-
-// Close popup when X is clicked
+// Email popup close events
 document.querySelector(".close-btn").addEventListener("click", function(){
     closeEmailPopup();
 });
 
-// Close when clicking outside content
 document.getElementById("email-popup").addEventListener("click", function(e){
     if(e.target === this){
         closeEmailPopup();
     }
 });
 
-// Show popup after 5 seconds
-setTimeout(function(){
-    document.getElementById("email-popup").style.display = "flex";
-}, 5000);
-
-// Cookie Banner Functions
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-    console.log('Cookies accepted');
-    
-    // Load analytics after accepting cookies
-    if (typeof gtag !== 'undefined') {
-        gtag('config', 'G-4N8D4VDWQJ');
-    }
-}
-
-function declineCookies() {
-    localStorage.setItem('cookieConsent', 'declined');
-    document.getElementById('cookie-banner').style.display = 'none';
-    console.log('Cookies declined');
-}
-
-// Check and show cookie banner if not already accepted
-function checkCookieConsent() {
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    console.log('Cookie consent status:', cookieConsent);
-    
-    if (!cookieConsent) {
-        // No decision made yet, show the banner
-        console.log('Showing cookie banner');
-        document.getElementById('cookie-banner').style.display = 'block';
-    } else {
-        // User has already made a decision, hide the banner
-        console.log('Hiding cookie banner - user already decided:', cookieConsent);
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-}
-
-// Initialize when DOM is loaded
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, checking cookie consent...');
-    checkCookieConsent();
+    console.log('=== DOM LOADED - INITIALIZING ===');
     
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
     
-    // Initialize other components
+    // Check cookie consent
+    checkCookieConsent();
+    
+    // Initialize volume
     audioElement.volume = 0.8;
+    
+    // Show email popup after 5 seconds
+    setTimeout(function(){
+        console.log('Showing email popup');
+        document.getElementById("email-popup").style.display = "flex";
+    }, 5000);
+    
+    console.log('=== INITIALIZATION COMPLETE ===');
 });
