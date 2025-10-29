@@ -746,4 +746,386 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+ /* Email Popup Styles */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            display: none;
+        }
+        
+        .popup-content {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+            animation: popupFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: #4CAF50;
+        }
+        
+        .popup-content h3 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+            text-align: center;
+        }
+        
+        #email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        #email-form input {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        #email-form input::placeholder {
+            color: #aaa;
+        }
+        
+        #email-form button {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        #email-form button:hover {
+            background: #45a049;
+        }
+        
+        /* Cookie Banner Styles */
+        #cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: rgba(34, 34, 34, 0.95);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        #cookie-banner.show {
+            display: block;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+        
+        .cookie-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .cookie-text h3 {
+            margin-bottom: 8px;
+            color: #4CAF50;
+        }
+        
+        .cookie-text p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #ddd;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .cookie-btn.accept {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .cookie-btn.accept:hover {
+            background: #45a049;
+        }
+        
+        .cookie-btn.decline {
+            background: #f44336;
+            color: white;
+        }
+        
+        .cookie-btn.decline:hover {
+            background: #d32f2f;
+        }
+        
+        .cookie-link {
+            color: #4CAF50;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 600px) {
+            .cookie-buttons {
+                flex-direction: column;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .demo-buttons {
+            margin-top: 20px;
+        }
+
+        * Email Popup Styles */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    display: none;
+}
+
+.popup-content {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+@keyframes popupFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #4CAF50;
+}
+
+.popup-content h3 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+#email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#email-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#email-form input::placeholder {
+    color: #aaa;
+}
+
+#email-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#email-form button:hover {
+    background: #45a049;
+}
+
+/* Cookie Banner Styles */
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: rgba(34, 34, 34, 0.95);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+#cookie-banner.show {
+    display: block;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cookie-text h3 {
+    margin-bottom: 8px;
+    color: #4CAF50;
+}
+
+.cookie-text p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    color: #ddd;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.cookie-btn.accept {
+    background: #4CAF50;
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    background: #45a049;
+}
+
+.cookie-btn.decline {
+    background: #f44336;
+    color: white;
+}
+
+.cookie-btn.decline:hover {
+    background: #d32f2f;
+}
+
+@media (max-width: 600px) {
+    .cookie-buttons {
+        flex-direction: column;
+    }
+    
+    .cookie-btn {
+        width: 100%;
+    }
+}
         
