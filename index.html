@@ -9,56 +9,32 @@
     <title>MANASSEH'S MUSIC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N8D4VDWQJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4N8D4VDWQJ');
+    </script>
 
-<script>
-
-script>
-
-  function loadAnalytics(){
-  var gtaScript= document.createElement("script")
-  gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-4N8D4VDWQJ"
-  gtaScript.async=true;
-  document.head.appendChild(gtaScript);
-
-  gtaScript.onload = function() {
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4N8D4VDWQJ');
-  }
-}
-
-</script>
-
-
-
-
-
-            <!-- Structured Data -->
-
-    <script type="application/1d+json">
-    {    
+    <!-- Fixed Structured Data -->
+    <script type="application/ld+json">
+    {
         "@context": "https://schema.org",
-        "@type":"Professional Music",
+        "@type": "MusicGroup",
         "name": "Manasseh's Music",
         "url": "https://yourName.github.io",
-        "logo":"images/Logo.png",
-        "description":"Advanced Music",
-        "mainentity:{
-          "@type":{Music}
-          "headline";"Manasseh's Music"
-          "DatePublished":"2025-6-20"
-        }"
-        "Address":{
-        "@type":"Postal Address",
-        "@adressLocality" :"Accra",
-        "addressRegion":"Greater Accra",
-        "PostalCode":"233"
-        "AddressCountry":"GH"
-       }
+        "logo": "images/Logo.png",
+        "description": "Professional music portfolio featuring original compositions",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Accra",
+            "addressRegion": "Greater Accra",
+            "postalCode": "233",
+            "addressCountry": "GH"
+        }
     }
-
-
     </script>
     
 
@@ -70,7 +46,7 @@ script>
     <link rel="stylesheet" href="music.css"> 
     
        
->
+
 </head>
 <body>
     <!-- Header -->
@@ -324,4 +300,3 @@ setTimeout(function(){
         
 
         
-
