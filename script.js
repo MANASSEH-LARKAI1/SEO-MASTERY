@@ -264,52 +264,6 @@ function closeEmailPopup() {
 
 // ========== EVENT LISTENERS AND INITIALIZATION ==========
 
-// Event Listeners for audio player
-playPauseBtn.addEventListener('click', togglePlayPause);
-prevBtn.addEventListener('click', prevTrack);
-nextBtn.addEventListener('click', nextTrack);
-volumeBtn.parentElement.addEventListener('click', toggleMute);
-
-// Progress bar dragging
-progressContainer.addEventListener('mousedown', () => isDragging = true);
-document.addEventListener('mouseup', () => isDragging = false);
-progressContainer.addEventListener('click', setProgress);
-
-// Volume control
-volumeContainer.addEventListener('click', setVolume);
-
-// Audio event listeners
-audioElement.addEventListener('timeupdate', updateProgress);
-audioElement.addEventListener('ended', nextTrack);
-audioElement.addEventListener('loadedmetadata', function() {
-    totalTimeEl.textContent = formatTime(audioElement.duration);
-});
-
-// Play track buttons
-document.querySelectorAll('.play-track').forEach(button => {
-    button.addEventListener('click', function() {
-        const trackIndex = parseInt(this.getAttribute('data-track'));
-        loadTrack(trackIndex);
-        togglePlayPause();
-    });
-});
-
-// Mobile Menu Toggle
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('nav ul').classList.toggle('active');
-});
-
-// Email popup close events
-document.querySelector(".close-btn").addEventListener("click", function(){
-    closeEmailPopup();
-});
-
-document.getElementById("email-popup").addEventListener("click", function(e){
-    if(e.target === this){
-        closeEmailPopup();
-    }
-});
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('=== DOM LOADED - INITIALIZING ===');
@@ -328,6 +282,52 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Showing email popup');
         document.getElementById("email-popup").style.display = "flex";
     }, 5000);
+    
+    // Event Listeners for audio player
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    prevBtn.addEventListener('click', prevTrack);
+    nextBtn.addEventListener('click', nextTrack);
+    volumeBtn.parentElement.addEventListener('click', toggleMute);
+
+    // Progress bar dragging
+    progressContainer.addEventListener('mousedown', () => isDragging = true);
+    document.addEventListener('mouseup', () => isDragging = false);
+    progressContainer.addEventListener('click', setProgress);
+
+    // Volume control
+    volumeContainer.addEventListener('click', setVolume);
+
+    // Audio event listeners
+    audioElement.addEventListener('timeupdate', updateProgress);
+    audioElement.addEventListener('ended', nextTrack);
+    audioElement.addEventListener('loadedmetadata', function() {
+        totalTimeEl.textContent = formatTime(audioElement.duration);
+    });
+
+    // Play track buttons
+    document.querySelectorAll('.play-track').forEach(button => {
+        button.addEventListener('click', function() {
+            const trackIndex = parseInt(this.getAttribute('data-track'));
+            loadTrack(trackIndex);
+            togglePlayPause();
+        });
+    });
+
+    // Mobile Menu Toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    // Email popup close events
+    document.querySelector(".close-btn").addEventListener("click", function(){
+        closeEmailPopup();
+    });
+
+    document.getElementById("email-popup").addEventListener("click", function(e){
+        if(e.target === this){
+            closeEmailPopup();
+        }
+    });
     
     console.log('=== INITIALIZATION COMPLETE ===');
 });
