@@ -269,12 +269,14 @@ if (isPlaying==="true") {
 }
 } 
 
+// ... (keep all your existing track and audio player code) ...
+
 // Email Popup Functions
 function closeEmailPopup() {
     document.getElementById("email-popup").style.display = "none";
 }
 
-// Close popup when X is clicked (FIXED: corrected spelling)
+// Close popup when X is clicked
 document.querySelector(".close-btn").addEventListener("click", function(){
     closeEmailPopup();
 });
@@ -332,4 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Initialize other components
+    audioElement.volume = 0.8;
 });
